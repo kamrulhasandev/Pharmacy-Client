@@ -31,7 +31,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               </a>
             </li>
             <li>
-              <a href="/add-category">
+              <a href="/dashboard/add-category">
                 <p>Add Category</p>
               </a>
             </li>

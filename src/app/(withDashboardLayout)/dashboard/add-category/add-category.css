@@ -1,0 +1,49 @@
+.add-category-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.add-category-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add-category-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-category-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.add-category-form input[type="text"],
+.add-category-form input[type="file"] {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.add-category-form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.add-category-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
