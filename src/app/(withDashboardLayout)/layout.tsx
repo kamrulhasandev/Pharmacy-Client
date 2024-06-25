@@ -41,7 +41,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               </a>
             </li>
             <li>
-              <a href="/add-product">
+              <a href="/dashboard/add-product">
                 <p>Add Product</p>
               </a>
             </li>

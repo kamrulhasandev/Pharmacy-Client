@@ -8,18 +8,18 @@ const HomePage: React.FC = () => {
   const axiosSecure = useAxiosSecure();
 
   const {
-    data: products,
+    data: categories,
     isLoading,
     error,
   } = useQuery<any, Error>({
-    queryKey: ['products'],
+    queryKey: ['category'],
     queryFn: async () => {
-      const response: AxiosResponse<any> = await axiosSecure.get('/product');
+      const response: AxiosResponse<any> = await axiosSecure.get('/category');
       return response.data.data;
     },
   });
 
-  console.log(products);
+  console.log(categories);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -32,13 +32,12 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <h1>This is HomePage component</h1>
-      {products && (
+      {categories && (
         <ul>
-          {products?.map((product: any) => (
-            <li key={product._id}>
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <p>Price: ${product.price}</p>
+          {categories?.map((category: any) => (
+            <li key={category._id}>
+              <h2>{category.name}</h2>
+              
             </li>
           ))}
         </ul>
