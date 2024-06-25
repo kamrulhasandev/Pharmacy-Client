@@ -1,0 +1,118 @@
+/* ProductModal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: modal-fadeIn 0.3s ease-out;
+    max-height: 90vh; 
+  }
+  
+  @keyframes modal-fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .modal-header h2 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .modal-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .modal-close-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: #333;
+  }
+  
+  .modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .modal-details {
+    flex: 1;
+  }
+  
+  .modal-details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .modal-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #eee;
+  }
+  
+  .modal-action-button {
+    background-color: #0070f3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-action-button:hover {
+    background-color: #005bb5;
+  }
+  

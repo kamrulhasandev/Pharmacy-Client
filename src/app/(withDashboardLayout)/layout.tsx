@@ -26,8 +26,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         <nav className="navigation">
           <ul>
             <li>
-              <a href="/">
-                <p>Dashboard</p>
+              <a href="/dashboard">
+                <p>Dashboard Home</p>
               </a>
             </li>
             <li>
@@ -36,7 +36,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               </a>
             </li>
             <li>
-              <a href="/all-category">
+              <a href="/dashboard/all-category">
                 <p>All Category</p>
               </a>
             </li>
@@ -46,13 +46,13 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               </a>
             </li>
             <li>
-              <a href="/all-product">
+              <a href="/dashboard/all-product">
                 <p>All Product</p>
               </a>
             </li>
             <li>
-              <a href="/all-product">
-                <p>Users</p>
+              <a href="/dashboard/users">
+                <p>Users Management</p>
               </a>
             </li>
           </ul>
