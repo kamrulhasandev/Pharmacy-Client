@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ProductModal from "@/components/UI/ProductModal/ProductModal";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 const AllProduct = () => {
   const axiosSecure = useAxiosSecure();
@@ -15,7 +16,11 @@ const AllProduct = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Fetch products using react-query
-  const { data: products, isLoading } = useQuery<any, Error>({
+  const {
+    data: products,
+    isLoading,
+    refetch,
+  } = useQuery<any, Error>({
     queryKey: ["product"],
     queryFn: async () => {
       const response: AxiosResponse<any> = await axiosSecure.get("/product");
@@ -31,6 +36,35 @@ const AllProduct = () => {
   const closeModal = () => {
     setSelectedProduct(null);
     setIsModalOpen(false);
+  };
+
+  const handleDelete = (productId: string) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await axiosSecure.delete(
+            `/product/delete-product/${productId}`
+          );
+          if (response.data.success) {
+            Swal.fire("Deleted!", "Product has been deleted.", "success");
+            refetch();
+          } else {
+            Swal.fire("Error", "Failed to delete product.", "error");
+          }
+        } catch (error) {
+          console.error("Delete error:", error);
+          Swal.fire("Error", "Failed to delete product.", "error");
+        }
+      }
+    });
   };
 
   if (isLoading) {
@@ -79,7 +113,12 @@ const AllProduct = () => {
                   <td data-label="Stock">{product.stock}</td>
                   <td data-label="Expire Date">{product.expirationDate}</td>
                   <td data-label="Action" className="action-buttons">
-                    <button className="delete">Delete</button>
+                    <button
+                      className="delete"
+                      onClick={() => handleDelete(product._id)}
+                    >
+                      Delete
+                    </button>
                     <Link href={`/dashboard/all-product/${product._id}`}>
                       <button className="edit">Edit</button>
                     </Link>

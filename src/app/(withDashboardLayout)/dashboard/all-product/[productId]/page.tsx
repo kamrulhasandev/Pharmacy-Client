@@ -72,7 +72,7 @@ const EditProduct = ({ params }: { params: { productId: string } }) => {
       `/product/edit-product/${params.productId}`,
       updatedData
     );
-    console.log(response)
+    console.log(response);
     if (response.data.success) {
       toast.success("Product updated successfully");
       reset(updatedData);
