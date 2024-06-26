@@ -7,6 +7,7 @@ import "./all-product.css"; // Import the CSS file
 import Image from "next/image";
 import { useState } from "react";
 import ProductModal from "@/components/UI/ProductModal/ProductModal";
+import Link from "next/link";
 
 const AllProduct = () => {
   const axiosSecure = useAxiosSecure();
@@ -57,33 +58,42 @@ const AllProduct = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product: any, index: number) => (
-              <tr key={product._id}>
-                <td data-label="No">{index + 1}</td>
-                <td data-label="Image">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={50}
-                    height={50}
-                  />
-                </td>
-                <td data-label="Name">{product.name}</td>
-
-                <td data-label="Price">{product.price}</td>
-                <td data-label="Category">{product.category.name}</td>
-                <td data-label="Brand">{product.brand}</td>
-                <td data-label="Dosage Form">{product.dosageForm}</td>
-                <td data-label="Strength">{product.strength}</td>
-                <td data-label="Stock">{product.stock}</td>
-                <td data-label="Expire Date">{product.expirationDate}</td>
-                <td data-label="Action" className="action-buttons">
-                  <button>Delete</button>
-                  <button>Edit</button>
-                  <button onClick={() => openModal(product)}>View</button>
-                </td>
+            {Array.isArray(products) && products.length > 0 ? (
+              products.map((product: any, index: number) => (
+                <tr key={product._id}>
+                  <td data-label="No">{index + 1}</td>
+                  <td data-label="Image">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={50}
+                      height={50}
+                    />
+                  </td>
+                  <td data-label="Name">{product.name}</td>
+                  <td data-label="Price">{product.price}</td>
+                  <td data-label="Category">{product.category.name}</td>
+                  <td data-label="Brand">{product.brand}</td>
+                  <td data-label="Dosage Form">{product.dosageForm}</td>
+                  <td data-label="Strength">{product.strength}</td>
+                  <td data-label="Stock">{product.stock}</td>
+                  <td data-label="Expire Date">{product.expirationDate}</td>
+                  <td data-label="Action" className="action-buttons">
+                    <button className="delete">Delete</button>
+                    <Link href={`/dashboard/all-product/${product._id}`}>
+                      <button className="edit">Edit</button>
+                    </Link>
+                    <button className="view" onClick={() => openModal(product)}>
+                      View
+                    </button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={11}>No products found.</td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>

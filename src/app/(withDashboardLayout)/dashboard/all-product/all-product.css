@@ -54,15 +54,15 @@ tr:hover {
     opacity: 0.8;
 }
 
-.action-buttons button:first-child {
+.action-buttons .delete {
     background-color: #e74c3c;
 }
 
-.action-buttons button:nth-child(2) {
+.action-buttons .edit {
     background-color: #f39c12;
 }
 
-.action-buttons button:nth-child(3) {
+.action-buttons .view {
     background-color: #3498db;
 }
 
