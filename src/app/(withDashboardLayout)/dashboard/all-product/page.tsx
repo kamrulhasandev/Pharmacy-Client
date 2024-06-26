@@ -106,7 +106,7 @@ const AllProduct = () => {
                   </td>
                   <td data-label="Name">{product.name}</td>
                   <td data-label="Price">{product.price}</td>
-                  <td data-label="Category">{product.category.name}</td>
+                  <td data-label="Category">{product.categoryDetails.name}</td>
                   <td data-label="Brand">{product.brand}</td>
                   <td data-label="Dosage Form">{product.dosageForm}</td>
                   <td data-label="Strength">{product.strength}</td>

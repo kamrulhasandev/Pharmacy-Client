@@ -1,4 +1,4 @@
- body {
+.register-container {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     display: flex;
@@ -16,7 +16,7 @@
     max-width: 400px;
   }
   
-  h1 {
+  .register-container h3 {
     text-align: center;
     margin-bottom: 20px;
   }
@@ -58,12 +58,12 @@
     background-color: #0056b3;
   }
   
-  .google-login-section {
+  .social-login-section .google-login-section {
     text-align: center;
     margin-bottom: 20px;
   }
   
-  .register-link {
+  .register-div .register-link {
     text-align: center;
   }
   

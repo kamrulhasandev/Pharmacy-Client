@@ -50,7 +50,8 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="login-page">
+   <div className="login-container">
+     <div className="login-page">
       <h3>Login your account</h3>
       <form className="login-form" onSubmit={handleEmailLogin}>
         <div className="form-group">
@@ -97,6 +98,7 @@ const LoginPage: React.FC = () => {
         </p>
       </div>
     </div>
+   </div>
   );
 };
 

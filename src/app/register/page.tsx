@@ -63,7 +63,8 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="register-container">
+      <div className="login-page">
       <h3>Registration</h3>
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
@@ -109,17 +110,22 @@ const RegisterPage: React.FC = () => {
         </div>
       </form>
 
+      <div className="social-login-section">
       <div className="google-login-section">
         <button onClick={handleGoogleLogin} disabled={loading}>
           {loading ? "Signing in..." : "Sign in with Google"}
         </button>
       </div>
+      </div>
 
+      <div className="register-div">
       <div className="register-link">
         <p>
           Already have an account? <Link href="/login">Login Here</Link>
         </p>
       </div>
+      </div>
+    </div>
     </div>
   );
 };
