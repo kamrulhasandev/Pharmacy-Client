@@ -6,16 +6,14 @@ import useAuth from "@/hooks/useAuth";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { isAuthenticated, login, logout, user } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const [isAdmin] = useAdmin();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-
+console.log(isAdmin)
   const handleLogout: any = () => {
     logout();
   };
-
-  console.log(isAdmin);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -45,12 +43,12 @@ const Navbar = () => {
                 <div className="profile-dropdown">
                   {isAdmin ? (
                     <>
-                      <a href="#dashboard">Dashboard</a>
+                      <a href="/dashboard">Dashboard</a>
                       <button onClick={handleLogout}>Logout</button>
                     </>
                   ) : (
                     <>
-                      <a href="#my-orders">My Orders</a>
+                      <a href="/my-order">My Orders</a>
                       <a href="#my-profile">My Profile</a>
                       <button onClick={handleLogout}>Logout</button>
                     </>

@@ -28,7 +28,6 @@ const useAdmin = (): [boolean | undefined, boolean] => {
             data: { admin: false },
           };
         }
-        console.log("asking or checking is admin", user);
         const res = await axiosSecure.get<AdminResponse>(
           `/user/get-admin/${user.email}`
         );

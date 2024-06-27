@@ -3,8 +3,9 @@
 import useAxiosSecure from "@/hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
-import "./all-category.css";
 import Image from "next/image";
+
+import './all-cateogry.css'
 
 const AllCategory = () => {
   const axiosSecure = useAxiosSecure();
@@ -56,8 +57,8 @@ const AllCategory = () => {
                 </td>
                 <td data-label="Name">{category.name}</td>
                 <td data-label="Action" className="action-buttons">
-                  <button className="delete-btn">Delete</button>
-                  <button className="edit-btn">Edit</button>
+                  <button className="delete">Delete</button>
+                  <button className="edit">Edit</button>
                 </td>
               </tr>
             ))}

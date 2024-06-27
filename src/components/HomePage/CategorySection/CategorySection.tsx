@@ -6,7 +6,6 @@ const CategorySection = async () => {
     next: { revalidate: 30 },
   });
   const { data: categories } = await res.json();
-  console.log(categories);
 
   return (
     <div className={styles.container}>

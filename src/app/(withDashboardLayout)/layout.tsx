@@ -1,9 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./layout.css";
-
+import useAdmin from "@/hooks/useAdmin";
+import { useRouter } from "next/navigation";
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isAdmin, isAdminLoading] = useAdmin();
+  const router = useRouter();
+
+  console.log(isAdmin);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -51,8 +56,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               </a>
             </li>
             <li>
-              <a href="/dashboard/users">
-                <p>Users Management</p>
+              <a href="/dashboard/sales-report">
+                <p>Sales Report</p>
               </a>
             </li>
           </ul>
