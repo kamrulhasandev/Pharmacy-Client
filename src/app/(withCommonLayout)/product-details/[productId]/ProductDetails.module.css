@@ -5,6 +5,8 @@
     background-color: #f2f3f5;
     min-height: 100vh;
     padding-top: 50px;
+    z-index: -1;
+    position: relative;
   }
   
   .productDetailsContainer {

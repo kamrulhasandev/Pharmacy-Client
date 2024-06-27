@@ -10,7 +10,7 @@
 
 .sidebar {
     width: 250px;
-    background-color: #343a40;
+    background-color: #16193A;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -21,11 +21,12 @@
     left: 0;
     z-index: 1000; 
     transition: transform 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .logo {
     width: 150px;
-    margin-bottom: 20px;
+    margin: 0 0 50px 0
 }
 
 .navigation {
@@ -44,24 +45,33 @@
 .navigation a {
     color: white;
     text-decoration: none;
-    display: block;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .navigation li {
     margin-bottom: 10px;
+    
 }
 
 .navigation p {
     color: white;
     text-decoration: none;
     display: block;
-    padding: 10px;
-    border-radius: 4px;
+   
+    
 }
 
-.navigation p:hover {
+.navigation a:hover {
     background-color: #495057;
 }
+
+.navigation .active a {
+    background-color: #495057;
+  }
 
 .logo a {
     font-size: 26px;
@@ -70,11 +80,13 @@
     color: white;
     text-decoration: none;
     display: block;
+    
 }
 
 .header {
-    background-color: #007bff;
-    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 25px;
     width: 100%; 
     position: fixed; 
     top: 0;
@@ -134,5 +146,9 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
+    }
+    .logo {
+        width: 150px;
+        margin: 50px 0 50px 0
     }
 }

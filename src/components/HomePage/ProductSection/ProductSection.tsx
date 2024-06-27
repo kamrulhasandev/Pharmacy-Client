@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './ProductSection.module.css';
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./ProductSection.module.css";
 
 const ProductSection = async () => {
   const res = await fetch("http://localhost:5000/api/product", {
@@ -14,7 +14,11 @@ const ProductSection = async () => {
       <h1 className={styles.title}>Top Products</h1>
       <div className={styles.grid}>
         {products.slice(0, 6).map((product: any) => (
-          <Link href={`/product-details/${product._id}`} key={product.id} className={styles.card}>
+          <Link
+            href={`/product-details/${product._id}`}
+            key={product.id}
+            className={styles.card}
+          >
             <Image
               src={product.image}
               alt={product.name}
@@ -23,10 +27,18 @@ const ProductSection = async () => {
               className={styles.image}
             />
             <div className={styles.details}>
-              <h2 className={styles.name}>{product.name}</h2>
-              <p className={styles.price}>BDT: {product.price}</p>
-              <p className={styles.category}>Category: {product.categoryDetails.name}</p>
-              <p className={styles.stock}>Stock: {product.stock}</p>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h2 className={styles.name}>{product.name}</h2>
+                <p style={{ fontWeight: "bold" }} className={styles.price}>
+                  BDT: <span style={{ color: "green" }}>{product.price}</span>
+                </p>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <p className={styles.category}>
+                  Category: {product.categoryDetails.name}
+                </p>
+                <p className={styles.stock}>Stock: {product.stock}</p>
+              </div>
             </div>
           </Link>
         ))}
