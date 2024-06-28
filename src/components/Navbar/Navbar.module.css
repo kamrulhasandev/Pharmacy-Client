@@ -1,7 +1,7 @@
 
 
 .navbar {
-  background-color: #ffffff; 
+  background-color: #66BC89; 
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -23,6 +23,7 @@
 .navbarLogo h1 {
   margin: 0;
   font-size: 24px;
+  color: white;
 }
 
 .navbarLinks {
@@ -35,13 +36,14 @@
 .navbarLinks a {
   margin: 0 15px;
   text-decoration: none;
-  color: #333333; 
+  color: white; 
+  border-bottom: 2px solid transparent;
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
 .navbarLinks a:hover {
-  color: #007bff; 
+  border-bottom: 2px solid white;
 }
 
 .navbarAuth {
@@ -50,18 +52,17 @@
 }
 
 .authButton {
-  background-color: transparent;
+  background-color: white;
   border: none;
   cursor: pointer;
   font-size: 16px;
   padding: 10px 20px;
   transition: all 0.3s ease;
-  color: #007bff;
+  color: #66BC89;
+  border-radius: 25px;
 }
 
-.authButton:hover {
-  color: #0056b3;
-}
+
 
 .toggleMenu {
   display: none;
@@ -74,12 +75,12 @@
 @media (max-width: 768px) {
   .navbarLinks {
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff; 
+    background-color: #66BC89; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 1000; 

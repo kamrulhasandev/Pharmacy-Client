@@ -1,0 +1,71 @@
+.container {
+    background-color: #f2f3f5;
+    padding: 50px 0;
+  }
+  
+  .innerContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .imageContainer {
+    flex: 1 1 50%;
+    gap: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .textContainer {
+    flex: 1 1 50%;
+  }
+  
+  .welcomeText {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #66BC89;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+
+  @media screen and (max-width: 768px) {
+    .innerContainer {
+      flex-direction: column;
+    }
+
+    .title {
+        font-size: 25px;
+        margin-bottom: 20px;
+    } 
+    
+  }

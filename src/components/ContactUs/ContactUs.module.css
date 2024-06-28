@@ -1,0 +1,114 @@
+.contactUs {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(102, 188, 137, 0.8); 
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.backgroundImage {
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.contactForm {
+  background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background to the form */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactForm label {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 15px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: #66BC89;
+  outline: none;
+}
+
+.contactForm textarea {
+  resize: vertical; 
+  min-height: 100px;
+}
+
+.contactForm button {
+  padding: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #66BC89;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contactForm button:hover {
+  background-color: #58a97b;
+}
+
+@media (max-width: 768px) {
+  .contactUs {
+   
+   
+    height: 80vh; 
+  }
+  .content {
+    padding: 10px;
+  }
+
+  .contactForm {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .contactForm input,
+  .contactForm textarea {
+    font-size: 0.9em;
+  }
+
+  .contactForm button {
+    font-size: 1em;
+  }
+}

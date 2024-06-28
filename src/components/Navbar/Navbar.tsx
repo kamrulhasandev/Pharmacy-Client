@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState } from "react";
@@ -24,9 +22,13 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <div className={styles.navbarContent}>
         <div className={styles.navbarLogo}>
-          <h1>Logo</h1>
+          <h1>MedLane</h1>
         </div>
-        <div className={`${styles.navbarLinks} ${isMobileMenuOpen ? styles.active : ""}`}>
+        <div
+          className={`${styles.navbarLinks} ${
+            isMobileMenuOpen ? styles.active : ""
+          }`}
+        >
           <a href="/">Home</a>
           <a href="/all-product">Products</a>
           {isAuthenticated ? (
@@ -41,7 +43,7 @@ const Navbar = () => {
               </button>
             </>
           ) : (
-            <a href="/login" className={styles.authButton}>
+            <a href="/login" style={{color: "#66BC89"}} className={styles.authButton}>
               Login
             </a>
           )}
