@@ -30,7 +30,7 @@ const AddCategory = () => {
         "/category/create-category",
         category
       );
-      console.log(response);
+      
       if (response.data.success === true) {
         reset();
         toast.success("Category added successfully");

@@ -31,7 +31,6 @@ const LoginPage: React.FC = () => {
     } catch (error: any) {
       setError(error.message);
     }
-    console.log(email, password);
   };
 
   const handleGoogleLogin = async () => {

@@ -30,7 +30,11 @@ const SalesReport = () => {
     enabled: !!query,
   });
 
-  console.log(sales);
+  console.log(sales)
+
+  console.log(query);
+
+
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const date = event.target.value;

@@ -5,7 +5,7 @@ import useAuth from "./useAuth";
 import { useRouter } from "next/navigation";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://pharmacy-server.vercel.app/api",
 });
 const useAxiosSecure = () => {
   const router = useRouter();

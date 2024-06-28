@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import "./add-product.css";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import toast from "react-hot-toast";
-import { useState } from "react";
+
 
 const AddProduct = () => {
   const {
@@ -29,7 +29,7 @@ const AddProduct = () => {
     },
   });
 
-  console.log(categories);
+
 
   const onSubmit = async (data: any) => {
     const imageFile = { image: data.image[0] };
@@ -55,12 +55,12 @@ const AddProduct = () => {
         expirationDate: data.expirationDate,
         usageInstructions: data.usageInstructions,
       };
-      console.log(productItem);
+   
         const response = await axiosSecure.post(
           "/product/create-product",
           productItem
         );
-        console.log(response);
+      
         if (response.data.success === true) {
           reset();
           toast.success("Product added successfully");

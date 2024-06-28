@@ -22,7 +22,7 @@ const DashboardHome = () => {
     return <div>Loading...</div>;
   }
 
-  console.log(metaData);
+
 
   return (
     <div className="dashboard-container">

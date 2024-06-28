@@ -73,24 +73,22 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
           quantity: 1,
         };
         const res = await axiosSecure.post("/sales/add-sale", buyingData);
-
+  
         if (res.status === 200) {
           toast.success("Sale successful!");
-          refetch();
+          refetch(); 
         } else {
           toast.error("Sale failed!");
         }
-        console.log(res);
       } catch (error) {
         toast.error("An error occurred. Please try again.");
         console.error(error);
       }
     }
   };
+  
 
-  console.log(isAuthenticated);
-  console.log(userData);
-  console.log(product);
+ 
 
   return (
     <div className={styles.mainContainer}>

@@ -3,11 +3,11 @@ import Link from "next/link";
 import styles from "./ProductSection.module.css";
 
 const ProductSection = async () => {
-  const res = await fetch("http://localhost:5000/api/product", {
+  const res = await fetch("https://pharmacy-server.vercel.app/api/product", {
     next: { revalidate: 30 },
   });
   const { data: products } = await res.json();
-  console.log(products);
+
 
   return (
     <div className={styles.container}>

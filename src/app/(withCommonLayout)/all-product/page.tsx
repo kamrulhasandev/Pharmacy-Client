@@ -14,7 +14,6 @@ const AllProduct = () => {
   const {
     data: products,
     isLoading,
-    refetch,
   } = useQuery<any, Error>({
     queryKey: ["product"],
     queryFn: async () => {
@@ -23,7 +22,9 @@ const AllProduct = () => {
     },
   });
 
-  console.log(products);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   // Filter products based on search query
   const filteredProducts = products?.filter((product: any) =>

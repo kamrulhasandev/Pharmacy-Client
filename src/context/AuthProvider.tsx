@@ -12,9 +12,9 @@ import {
   GoogleAuthProvider,
   Unsubscribe,
 } from "firebase/auth";
-import { auth } from "../config/firebase.config";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { auth } from "@/firebase/firebase.config";
 
 export interface AuthInfo {
   user: User | null;
@@ -104,9 +104,8 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
           const userInfo = { email: currentUser.email };
           try {
             const res = await axiosPublic.post("/jwt", userInfo);
-            console.log("API Response:", res.data);
+
             if (res.data.token) {
-              console.log("Token received:", res.data.token);
               localStorage.setItem("access-token", res.data.token);
             } else {
               console.error("Token not found in response:", res.data);

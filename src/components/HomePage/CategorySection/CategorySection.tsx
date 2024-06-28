@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./CategorySection.module.css";
 
 const CategorySection = async () => {
-  const res = await fetch("http://localhost:5000/api/category", {
+  const res = await fetch("https://pharmacy-server.vercel.app/api/category", {
     next: { revalidate: 30 },
   });
   const { data: categories } = await res.json();
