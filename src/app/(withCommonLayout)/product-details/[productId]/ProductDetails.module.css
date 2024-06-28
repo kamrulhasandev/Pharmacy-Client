@@ -74,10 +74,35 @@
   }
   
   .description,
-  .usageInstruction {
-    margin-top: 20px;
-  }
-  
+.usageInstruction,
+.reviewsContainer {
+  margin-top: 20px;
+}
+
+.reviewsContainer {
+  margin-top: 40px;
+}
+
+.reviewList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.reviewItem {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment {
+  margin-bottom: 5px;
+}
+
+.rating {
+  font-style: italic;
+  color: #666;
+}
   
   
   @media screen and (max-width: 768px) {

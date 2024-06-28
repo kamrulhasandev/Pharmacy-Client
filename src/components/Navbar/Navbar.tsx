@@ -34,7 +34,7 @@ const Navbar = () => {
               {isAdmin ? (
                 <a href="/dashboard">Dashboard</a>
               ) : (
-                <a href="/my-order">Orders</a>
+                <a href="/profile/my-order">Orders</a>
               )}
               <button className={styles.authButton} onClick={handleLogout}>
                 Logout

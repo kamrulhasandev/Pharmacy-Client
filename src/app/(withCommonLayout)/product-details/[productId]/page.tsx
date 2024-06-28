@@ -60,6 +60,8 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
     );
   }
 
+  console.log(product);
+
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
       router.push("/login");
@@ -73,10 +75,10 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
           quantity: 1,
         };
         const res = await axiosSecure.post("/sales/add-sale", buyingData);
-  
+
         if (res.status === 200) {
           toast.success("Sale successful!");
-          refetch(); 
+          refetch();
         } else {
           toast.error("Sale failed!");
         }
@@ -86,9 +88,6 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
       }
     }
   };
-  
-
- 
 
   return (
     <div className={styles.mainContainer}>
@@ -118,18 +117,13 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
             <p className={styles.category}>
               Category: {product.categoryDetails.name}
             </p>
-            {
-              product.stock > 0 ? (
-                <button
-                  className={styles.buyButton}
-                  onClick={handleBuyNow}
-                >
-                  Buy Now
-                </button>
-              ) : (
-                <p className={styles.outOfStock}>Out of Stock</p>
-              )
-            }
+            {product.stock > 0 ? (
+              <button className={styles.buyButton} onClick={handleBuyNow}>
+                Buy Now
+              </button>
+            ) : (
+              <p className={styles.outOfStock}>Out of Stock</p>
+            )}
           </div>
         </div>
         <div className={styles.description}>
@@ -139,6 +133,22 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
         <div className={styles.usageInstruction}>
           <h3>Usage Instruction</h3>
           <p>{product.usageInstructions}</p>
+        </div>
+
+        <div className={styles.reviewsContainer}>
+          <h3>Reviews</h3>
+          {product.reviews.length === 0 ? (
+            <p>No reviews yet.</p>
+          ) : (
+            <ul className={styles.reviewList}>
+              {product.reviews.map((review: any) => (
+                <li key={review._id} className={styles.reviewItem}>
+                  <p className={styles.comment}>{review.comment}</p>
+                  <p className={styles.rating}>Rating: {review.rating}</p>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>
